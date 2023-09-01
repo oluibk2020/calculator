@@ -45,7 +45,7 @@ minus.addEventListener("click", function (textContent) {
 pie.addEventListener("click", function (textContent) {
   const container = display.textContent;
   if (container.endsWith("3.14") !== true) {
-    const pie = Math.PI.toFixed(4);
+    const pie = Math.PI.toFixed(2);
     arr.push(pie);
     displayScreen();
   }
