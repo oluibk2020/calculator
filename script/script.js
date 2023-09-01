@@ -44,9 +44,11 @@ minus.addEventListener("click", function (textContent) {
 //pie
 pie.addEventListener("click", function (textContent) {
   const container = display.textContent;
-  const pie = Math.PI.toFixed(2);
-  arr.push(pie);
-  displayScreen();
+  if (container.endsWith("3.14") !== true) {
+    const pie = Math.PI.toFixed(4);
+    arr.push(pie);
+    displayScreen();
+  }
 });
 //plus
 add.addEventListener("click", function (textContent) {
@@ -90,7 +92,6 @@ multiply.addEventListener("click", function (textContent) {
     container !== "0" &&
     container.endsWith(".") === false
   ) {
-
     const multiply = "*";
     arr.push(multiply);
     displayScreen();
@@ -101,7 +102,7 @@ multiply.addEventListener("click", function (textContent) {
 clearScreen.addEventListener("click", resetScreen);
 
 //cancel last digit
-cancel.addEventListener("click", function (textContent) {
+cancel.addEventListener("click", function () {
   arr.pop();
   displayScreen();
 });
@@ -126,9 +127,18 @@ dot.addEventListener("click", function (textContent) {
 //carrot
 
 carrot.addEventListener("click", function (textContent) {
-  const carrot = textContent.target.innerText;
-  arr.push('**');
-  displayScreen();
+  const container = display.textContent;
+  if (
+    container.endsWith("*") !== true &&
+    container.endsWith("/") !== true &&
+    container.endsWith("+") !== true &&
+    container.endsWith("-") !== true &&
+    container !== "0" &&
+    container.endsWith(".") === false
+  ) {
+    arr.push("**");
+    displayScreen();
+  }
 });
 
 //number zero
@@ -197,7 +207,7 @@ nine.addEventListener("click", function (textContent) {
 function resetScreen(textContent) {
   arr = [];
   display.textContent = 0;
-  displayOutput.textContent = ''
+  displayOutput.textContent = "";
 }
 
 //show screen
@@ -213,7 +223,7 @@ function calcResult(e) {
     const answer = eval(display.textContent);
     displayOutput.textContent = answer;
   } catch (error) {
-    display.textContent = `Format Error`;
+    displayOutput.textContent = `Format Error`;
   }
   // return;
 }
