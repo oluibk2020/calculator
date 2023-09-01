@@ -1,5 +1,5 @@
 const clearScreen = document.body.querySelector("#ac");
-const percent = document.body.querySelector("#percent");
+const carrot = document.body.querySelector("#carrot");
 const division = document.body.querySelector("#division");
 const pie = document.body.querySelector("#pie");
 const minus = document.body.querySelector("#minus");
@@ -123,11 +123,11 @@ dot.addEventListener("click", function (textContent) {
   }
 });
 
-//percent
+//carrot
 
-percent.addEventListener("click", function (textContent) {
-  const percent = textContent.target.innerText;
-  arr.push(percent);
+carrot.addEventListener("click", function (textContent) {
+  const carrot = textContent.target.innerText;
+  arr.push('**');
   displayScreen();
 });
 

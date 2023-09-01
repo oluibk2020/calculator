@@ -97,6 +97,19 @@ html {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.container button.operator{
+  background-color: cyan;
+}
+
+.container button.clear{
+background-color: red;
+color: white;
+}
+.container button.cancel{
+background-color: white;
+color: red;
+}
+
 .container button:hover {
     background-color: #555;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adjusted box shadow on hover */
