@@ -221,7 +221,13 @@ function calcResult(e) {
   e.preventDefault();
   try {
     const answer = eval(display.textContent);
-    displayOutput.textContent = answer;
+    if (display.textContent.length > 20 === false) {
+      
+      displayOutput.textContent = answer;
+    } else{
+
+      displayOutput.textContent = `Math Error`;
+    }
   } catch (error) {
     displayOutput.textContent = `Format Error`;
   }
